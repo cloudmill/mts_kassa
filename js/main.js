@@ -12,11 +12,19 @@ var calc = function () {
     slider_calc = $('.main__calc__inpt').slider()
       .on('slide', calculate)
       .data('slider');
+
+      $('.main__calc__inpt-count').css('left',
+        $('.slider-handle.min-slider-handle').css('left'));
   }
   var calculate = function () {
     var val_calc = slider_calc.getValue()
     $('.main__calc__count__kass').text(val_calc);
     $('.main__calc__value .value').text((val_calc * 40000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+    if (parseInt($('.slider-handle.min-slider-handle').css('left')) + 100 < $('.main__calc__inpt-wrapper').width()) {
+      $('.main__calc__inpt-count').css('left',
+        $('.slider-handle.min-slider-handle').css('left'));
+    }
+
     if (val_calc % 10 == 1 && parseInt(val_calc / 10) != 1) {
       $('.word_kass').text('касса')
     } else if (val_calc % 10 == 5 || val_calc % 10 == 6 || val_calc % 10 == 7 || val_calc % 10 == 8 || val_calc % 10 == 9 || val_calc % 10 == 0 || parseInt(val_calc / 10) == 1) {
@@ -185,7 +193,7 @@ var forms = function () {
     var lastname = $(this).find('[name=lastname]')
     var secondname = $(this).find('[name=secondname]')
     var mail = $(this).find('[name=mail]')
-    var phone = $(this).find('[name=name]')
+    var phone = $(this).find('[name=phone]')
     var name_org = $(this).find('[name=name_org]')
     var inn = $(this).find('[name=inn]')
     var pass = $(this).find('[name=pass]')
