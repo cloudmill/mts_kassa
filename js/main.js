@@ -10,7 +10,7 @@ var calc = function() {
     var slider_calc;
     var init = function() {
         slider_calc = $('.main__calc__inpt').slider()
-            .on('slide', calculate)
+            .on('change', calculate)
             .data('slider');
 
         $('.main__calc__inpt-count').css('left',
