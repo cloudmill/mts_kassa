@@ -1953,6 +1953,9 @@ body.scroll {
     font-size: 16px;
     line-height: 150%;
   }
+  .wrapper .main__steps__item__text__title.title-quest:after {
+    bottom: 2px;
+  }
 }
 .wrapper .main__register {
   padding-top: 100px;
