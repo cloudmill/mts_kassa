@@ -537,6 +537,7 @@ body.scroll {
 }
 .wrapper .main__banner__mobile-img {
   display: none;
+  max-height: 250px;
 }
 @media (max-width: 1024px) {
   .wrapper .main__banner__mobile-img {
