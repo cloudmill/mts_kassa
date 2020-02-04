@@ -20,7 +20,7 @@ var calc = function() {
     var calculate = function() {
         var val_calc = slider_calc.getValue()
         $('.main__calc__count__kass').text(val_calc);
-        $('.main__calc__value .value').text((val_calc * 40000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+        $('.main__calc__value .value').text((val_calc * 45000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
         if (parseInt($('.slider-handle.min-slider-handle').css('left')) + 100 < $('.main__calc__inpt-wrapper').width()) {
             $('.main__calc__inpt-count').css('left',
                 $('.slider-handle.min-slider-handle').css('left'));
@@ -130,7 +130,7 @@ var popups = function() {
             animate_open_close({
                 item: $('.popup__wrapper')
             })
-        $('#' + $(this).attr('href')).addClass('active')
+        $($(this).attr('href')).addClass('active')
     })
     $(document).on('click', function(e) {
         if (!$('.js-popup:hover').length > 0 &&
